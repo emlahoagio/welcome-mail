@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import * as XLSX from 'xlsx';
 
+import { MailService } from './mail-service.service';
+
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -10,7 +12,21 @@ export class AppComponent {
   title = 'client';
   ExcelData: any;
 
-  constructor() {}
+  constructor(private mailService: MailService) {}
+
+  SendMail(): void {
+    const jsonData = JSON.stringify(this.ExcelData); // Chuyển đổi dữ liệu JSON thành chuỗi
+    const excelData = new File([jsonData], 'data.json'); // Tạo đối tượng File
+
+    this.mailService.sendExcelData(excelData).subscribe(
+      () => {
+        alert('Mail sent successfully!');
+      },
+      (error) => {
+        alert('Error sending mail: ' + error.message);
+      }
+    );
+  }
 
   ReadExcel(event: any) {
     let file = event.target.files[0];
