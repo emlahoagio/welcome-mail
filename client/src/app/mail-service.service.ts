@@ -7,8 +7,8 @@ import { Observable } from 'rxjs';
 export class MailService {
   constructor(private http: HttpClient) {}
 
-  sendExcelData(excelData: File): Observable<any> {
+  sendMail(formData: FormData): Observable<any> {
     const apiUrl = 'http://your-backend-api/send-excel-data'; // Thay thế bằng API endpoint thực tế
-    return this.http.post<any>(apiUrl, excelData);
+    return this.http.post<any>(apiUrl, formData);
   }
 }
