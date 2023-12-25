@@ -2,7 +2,7 @@
 <br />
 <input type="file" (change)="ReadExcel($event)" />
 
-<table class="">
+<table class="table">
   <thead>
     <tr>
       <th>Full Name</th>
@@ -18,7 +18,7 @@
       <td>{{ employee.JobTitle }}</td>
       <td>{{ employee.Email }}</td>
       <td>{{ employee.Quote }}</td>
-      <td>{{ employee.IsMale ? "Nam" : "Nữ" }}</td>
+      <td>{{ employee.IsMale ? "Male" : "Female" }}</td>
     </tr>
   </tbody>
 </table>
