@@ -1,0 +1,32 @@
+# File do Visual Studio tạo ra
+*.vscode
+*.suo
+*.user
+*.tmp
+*~
+
+# File tạm thời của Visual Studio
+*.launch
+**.json
+*.dll
+*.cache
+*.pdb
+*.xml
+*.nupkg
+
+# File do Visual Studio tạo ra cho TypeScript
+*.tsbuildinfo
+
+# File do Visual Studio tạo ra cho JavaScript
+*.js.map
+
+# File do Visual Studio tạo ra cho Angular
+*.ngfactory.ts
+*.ngstyle.ts
+
+# File build và deploy
+bin/
+obj/
+Dockerfile
+docker-compose.yml
+.dockerignore
